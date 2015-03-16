@@ -500,7 +500,7 @@ field_info * pgsql_get_field_info(PGresult *res)
 
         fi->field_isarray[i] = isArray(fi->field_types[i]);
 
-        if (fi->field_isarray[i])
+        if ((fi->field_lengths[i] != 0) && (fi->field_isarray[i]))
         {
             fi->tagdefs[i].dims = 
                 GetArrayDims( PQgetvalue(res, 0, i), &(fi->field_lengths[i]) );
