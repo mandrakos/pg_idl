@@ -43,8 +43,8 @@ endif
 	
 
 PGDIR=$(PGPATH)
-PG_CFLAGS=-I${PGDIR}/src/interfaces/libpq/ -I${PGDIR}/src/include/
-LIBPQA=${PGDIR}/src/interfaces/libpq/libpq.a
+PG_CFLAGS=-g -I${PGDIR}/src/interfaces/libpq/ -I${PGDIR}/src/include/
+LIBPQA=-g ${PGDIR}/src/interfaces/libpq/libpq.a
 
 ${LIBPQA}:
 ifndef PGVER
